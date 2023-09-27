@@ -9,11 +9,7 @@ class Product < ApplicationRecord
     where('price >= ?', price)
   }
 
-  scope :below_or_equal_to_price, lambda { |price|
-    where('price <= ?', price)
-  }
+  scope :below_or_equal_to_price, -> (price) { where('price <= ?', price) }
 
-  scope :recent, lambda {
-    order(:updated_at)
-  }
+  scope :recent, -> { order(:updated_at) }
 end
