@@ -20,4 +20,3 @@ module Paginable
     }
   end
 end
-
